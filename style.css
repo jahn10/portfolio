@@ -1,0 +1,48 @@
+* {
+	color: white;
+}
+
+body {
+	background: black;
+}
+
+.left-float {
+	float: left;
+}
+
+.right-float {
+	float: right;
+}
+
+#carousel .item {
+	min-width: 550px;
+	width: 33.3%;
+	padding: 0 8.3%;
+}
+
+#carousel .item .image-wrapper {
+	width: 100%;
+	height: 600px;
+	background: #d8d8d8;
+	position: relative;
+}
+
+#carousel .item .image-wrapper .image-shadow {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border: 1px white solid;
+	height: 600px;
+	position: relative;
+	top: -20px;
+}
+
+#carousel .item .image-wrapper .image {
+	width: 100%;
+}
+
+
+
+#carousel .item .item-label {
+	text-align: center;
+}
