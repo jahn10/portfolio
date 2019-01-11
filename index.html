@@ -2,43 +2,133 @@
 <html>
 <head>
 	<title>UNTITLED</title>
+	<link rel="stylesheet" type="text/css" href="fonts.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			const carouselItems = $('#carousel .item');
+			const left = $('#left-control');
+			const right = $('#right-control');
+
+			function scrollLeft(e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				console.log(carouselItems)
+				let newCur = 0;
+				carouselItems.each(function(i, el) {
+					if ($(el).hasClass('left')) {
+						newCur = i;
+					}
+					$(el).removeClass('left right cur');
+					$(el).removeClass('hidden first last').addClass('hidden');
+				})
+
+				if (newCur != 0) {
+					$(carouselItems[newCur-1]).addClass('left');
+					$(carouselItems[newCur-1]).removeClass('hidden');
+				} else {
+					// disable left button	
+					$(carouselItems[newCur]).addClass('first');
+					left.removeAttr('href')
+				}
+				$(carouselItems[newCur]).addClass('cur');
+				$(carouselItems[newCur]).removeClass('hidden');
+				$(carouselItems[newCur+1]).addClass('right');
+				$(carouselItems[newCur+1]).removeClass('hidden');
+				right.attr('href','#')
+				
+			}
+
+			function scrollRight(e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+
+				console.log(carouselItems)
+				let newCur = carouselItems.length - 1;
+				carouselItems.each(function(i, el) {
+					if ($(el).hasClass('right')) {
+						newCur = i;
+					}
+					$(el).removeClass('left right cur');
+					$(el).removeClass('hidden first last').addClass('hidden');
+				})
+
+				if (newCur != carouselItems.length - 1) {
+					$(carouselItems[newCur+1]).addClass('right');
+					$(carouselItems[newCur+1]).removeClass('hidden');
+				} else {
+					// DISABLE right BUTTON
+					$(carouselItems[newCur]).addClass('last');
+					right.removeAttr('href')
+				}
+				$(carouselItems[newCur]).addClass('cur');
+				$(carouselItems[newCur]).removeClass('hidden');
+				$(carouselItems[newCur-1]).addClass('left');
+				$(carouselItems[newCur-1]).removeClass('hidden');
+				left.attr('href','#')
+			}
+		    left.click(scrollLeft);
+		    right.click(scrollRight);
+		});
+
+		
+
+
+	</script>
 </head>
 <body>
 
 <div id="carousel">
-	<div class="left item">
-		<div class="image-wrapper">
-			<div class="image-shadow"></div>
-			<img src="" class="image" />
+	
+		<div class="left item">
+			<div class="image-wrapper">
+				<div class="image-shadow"></div>
+				<img src="" class="image" />
+			</div>
+			<div class="item-label">
+				<h2 class="item-title">What Cheer Pizza</h2>
+				<h3 class="item-desc">2017</h3>
+			</div>
 		</div>
-		<div class="item-label">
-			<h2 class="item-title">What Cheer Pizza</h2>
-			<h3 class="item-desc">2017</h3>
-		</div>
-	</div>
 
-	<div class="cur item">
-		<div class="image-wrapper">
-			<div class="image-shadow"></div>
-			<img src="" class="image" />
+	
+		<div class="cur item">
+			<div class="image-wrapper">
+				<div class="image-shadow"></div>
+				<img src="" class="image" />
+			</div>
+			<div class="item-label">
+				<h2 class="item-title">Posters</h2>
+				<h3 class="item-desc">2018</h3>
+			</div>
 		</div>
-		<div class="item-label">
-			<h2 class="item-title">Posters</h2>
-			<h3 class="item-desc">2018</h3>
-		</div>
-	</div>
 
-	<div class="right item">
-		<div class="image-wrapper">
-			<div class="image-shadow"></div>
-			<img src="" class="image" />
+	
+		<div class="right item">
+			<div class="image-wrapper">
+				<div class="image-shadow"></div>
+				<img src="" class="image" />
+			</div>
+			<div class="item-label">
+				<h2 class="item-title">Primary Secondary</h2>
+				<h3 class="item-desc">2018</h3>
+			</div>
 		</div>
-		<div class="item-label">
-			<h2 class="item-title">Primary Secondary</h2>
-			<h3 class="item-desc">2018</h3>
+
+		<div class="hidden item">
+			<div class="image-wrapper">
+				<div class="image-shadow"></div>
+				<img src="" class="image" />
+			</div>
+			<div class="item-label">
+				<h2 class="item-title">Primary Secondary</h2>
+				<h3 class="item-desc">2018</h3>
+			</div>
 		</div>
-	</div>
+	<div style="clear:both"></div>
 </div>
 <div id="bottom-bar">
 	<div class="left-float">
@@ -46,8 +136,8 @@
 	</div>
 	<div class="center-float">
 		<div id="carousel-control">
-			<div id="left-control"><a href="#"><</a></div>
-			<div id="right-control"><a href="#">></a></div>
+			<a href="#" id="left-control"><</a>
+			<a href="#" id="right-control">></a>
 		</div>
 	</div>
 	<div class="right-float">
