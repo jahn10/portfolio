@@ -1,147 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- This is what appears your web browser's tab area -->
 	<title>UNTITLED</title>
+
+	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="fonts.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- Javascript files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function(){
-			const carouselItems = $('#carousel .item');
-			const left = $('#left-control');
-			const right = $('#right-control');
-
-			function scrollLeft(e) {
-				e.preventDefault();
-				e.stopPropagation();
-
-				console.log(carouselItems)
-				let newCur = 0;
-				carouselItems.each(function(i, el) {
-					if ($(el).hasClass('left')) {
-						newCur = i;
-					}
-					$(el).removeClass('left right cur');
-					$(el).removeClass('hidden first last').addClass('hidden');
-				})
-
-				if (newCur != 0) {
-					$(carouselItems[newCur-1]).addClass('left');
-					$(carouselItems[newCur-1]).removeClass('hidden');
-				} else {
-					// disable left button	
-					$(carouselItems[newCur]).addClass('first');
-					left.removeAttr('href')
-				}
-				$(carouselItems[newCur]).addClass('cur');
-				$(carouselItems[newCur]).removeClass('hidden');
-				$(carouselItems[newCur+1]).addClass('right');
-				$(carouselItems[newCur+1]).removeClass('hidden');
-				right.attr('href','#')
-				
-			}
-
-			function scrollRight(e) {
-				e.preventDefault();
-				e.stopPropagation();
-
-
-				console.log(carouselItems)
-				let newCur = carouselItems.length - 1;
-				carouselItems.each(function(i, el) {
-					if ($(el).hasClass('right')) {
-						newCur = i;
-					}
-					$(el).removeClass('left right cur');
-					$(el).removeClass('hidden first last').addClass('hidden');
-				})
-
-				if (newCur != carouselItems.length - 1) {
-					$(carouselItems[newCur+1]).addClass('right');
-					$(carouselItems[newCur+1]).removeClass('hidden');
-				} else {
-					// DISABLE right BUTTON
-					$(carouselItems[newCur]).addClass('last');
-					right.removeAttr('href')
-				}
-				$(carouselItems[newCur]).addClass('cur');
-				$(carouselItems[newCur]).removeClass('hidden');
-				$(carouselItems[newCur-1]).addClass('left');
-				$(carouselItems[newCur-1]).removeClass('hidden');
-				left.attr('href','#')
-			}
-		    left.click(scrollLeft);
-		    right.click(scrollRight);
-		});
-
-		
-
-
-	</script>
+	<script src="carousel.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
+<div id="body-wrapper">
 
-<div id="carousel">
-	
-		<div class="left item">
-			<div class="image-wrapper">
-				<div class="image-shadow"></div>
-				<img src="" class="image" />
+	<!-- Main slider section -->
+	<div id="carousel">
+			<div class="left item">
+				<div class="image-wrapper">
+					<!-- Styled to add a white border around images -->
+					<div class="image-shadow"></div>
+					<img src="images/home/whatcheer_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">What Cheer Pizza</h2>
+					<h3 class="item-desc">2017</h3>
+				</div>
 			</div>
-			<div class="item-label">
-				<h2 class="item-title">What Cheer Pizza</h2>
-				<h3 class="item-desc">2017</h3>
-			</div>
-		</div>
 
-	
-		<div class="cur item">
-			<div class="image-wrapper">
-				<div class="image-shadow"></div>
-				<img src="" class="image" />
-			</div>
-			<div class="item-label">
-				<h2 class="item-title">Posters</h2>
-				<h3 class="item-desc">2018</h3>
-			</div>
-		</div>
+			<a href="posters.html" class="cur item">
+					<div class="image-wrapper">
+						<div class="image-shadow"></div>
+						<img src="images/home/2_1poster_scaled.jpg" class="image" />
+					</div>
+					<div class="item-label">
+						<h2 class="item-title">Posters</h2>
+						<h3 class="item-desc">2018</h3>
+					</div>
+			</a>
 
-	
-		<div class="right item">
-			<div class="image-wrapper">
-				<div class="image-shadow"></div>
-				<img src="" class="image" />
+		
+			<div class="right item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="images/home/primary_secondary_scaled.jpeg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Primary Secondary</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
 			</div>
-			<div class="item-label">
-				<h2 class="item-title">Primary Secondary</h2>
-				<h3 class="item-desc">2018</h3>
-			</div>
-		</div>
 
-		<div class="hidden item">
-			<div class="image-wrapper">
-				<div class="image-shadow"></div>
-				<img src="" class="image" />
+			<div class="hidden item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Primary Secondary</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
 			</div>
-			<div class="item-label">
-				<h2 class="item-title">Primary Secondary</h2>
-				<h3 class="item-desc">2018</h3>
-			</div>
-		</div>
-	<div style="clear:both"></div>
+	</div>
 </div>
-<div id="bottom-bar">
-	<div class="left-float">
-		<h1 id="main-title">Lulian Ahn</h1>
-	</div>
-	<div class="center-float">
-		<div id="carousel-control">
-			<a href="#" id="left-control"><</a>
-			<a href="#" id="right-control">></a>
+
+<!-- Contact Section -->
+<div id="contact-wrapper">
+	<div id="bottom-bar">
+		<div class="left-float">
+
+			<!-- Main Title -->
+			<h1 id="main-title"><a href="index.html">Lulian Ahn</a></h1>
+		</div>
+		<div class="center-float">
+
+			<!-- Left and Right Control Buttons for Slider -->
+			<div id="carousel-control">
+				<a href="#" id="left-control"><</a>
+				<a href="#" id="right-control">></a>
+			</div>
+		</div>
+		<div class="right-float">
+
+			<!-- Contact Link -->
+			<h2 id="main-title"><a href="#" id="contact-link">Contact</a></h2>
 		</div>
 	</div>
-	<div class="right-float">
-		<h2 id="main-title">Contact</h2>
+	<div id="contact-content-wrapper">
+		<div id="portrait">
+			<div class="image-wrapper">
+				<img src="images/home/whatcheer_scaled.jpg" class="image" />
+			</div>
+		</div>
+		<div id="contact-text">
+			<div id="about">
+				<h3>About</h3>
+				<p>Lulian is currently a junior majoring in Graphic Design at <a href="#">Rhode Island School of Design</a>. She was born in Korea but raised in Malaysia for most of her life. Her main interestsare editorial design, branding and product designing.</p>
+				<p>She is currently a graphic designer/visual designer in <a href="#">RISD E'Ship</a> and <a href="#">Hack@Brown</a>.</p>
+				<p>In her spare time, she's on <a href="#">fontsinuse.com</a> looking at all the fonts she can't afford.</p>
+			</div>
+			<div id="contact">
+				<h3>Contact Her</h3>
+				<ul>
+					<li>jahn10@risd.edu</li>
+					<li>(917) 860 7360</li>
+				</ul>
+				<h3>Find Her</h3>
+				<ul>
+					<li><a href="https://www.behance.net/jahn102dd2">Behance</a></li>
+					<li><a href="https://www.linkedin.com/in/lulian-ahn-1660b8157/">Linked In</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 
