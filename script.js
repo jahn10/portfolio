@@ -1,13 +1,10 @@
 $(document).ready(function() {
-
-    $("#contact-wrapper").height($(window).height() - 80)
-
-    $("#contact-link").click(function(e) {
-    	e.preventDefault();
-    	$([document.documentElement, document.body]).animate({
-    	        scrollTop: $("#contact-wrapper").offset().top
-    	    }, 1000);
-    });
+    const description = $("#description ol")
+    let initialProjectDescription = 0
+    if (description.length) {
+        initialProjectDescription = description.offset().top
+    }
+    
 
     $(window).scroll(function() {
     	const yLocation = $(window).scrollTop();
@@ -16,5 +13,12 @@ $(document).ready(function() {
     	} else if (yLocation >= $("#contact-wrapper").offset().top - 50) {
     		$("#carousel-control").fadeOut();
     	}
+
+        if (yLocation > initialProjectDescription && yLocation + $("#description ol").height() < $("#contact-wrapper").offset().top - 100) {
+            const offset = yLocation - initialProjectDescription
+            $("#description ol").css('padding-top', offset)
+        } else if (yLocation < initialProjectDescription) {
+            $("#description ol").css('padding-top', 0)
+        }
     })
 });

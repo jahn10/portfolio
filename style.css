@@ -8,12 +8,13 @@
 html {
 	overflow-x: hidden;
 	height: 100%;
+	font-size: 60%;
 }
 
 body {
 	background: black;
 	font-family: "sharp_grotesklight_20", sans-serif;
-	font-size: 14pt;
+	font-size: 1.2rem
 }
 
 h1, h2, h3, h4, h5 {
@@ -21,11 +22,23 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-	font-size: 14pt;
+	font-size: 1.2rem;
 	padding-bottom: 16px;
 	letter-spacing: 1.4px;
 	line-height: 21px;
 }
+
+p a, li a {
+	position: relative;
+	top: 0;
+	transition: top 0.1s;
+	-webkit-transition: top 0.1s;
+}
+
+p a:hover, li a:hover {
+	top: 2px;
+}
+
 .image {
 	width: 100%;
 }
@@ -37,10 +50,11 @@ p {
 	padding-top: 80px;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 #carousel .item.first {
-	padding-left: 33.3%;
+	margin-left: 38%;
 }
 
 #carousel .item.last {
@@ -48,23 +62,33 @@ p {
 }
 
 #carousel .item {
-	width: 33.3%;
+	width: 25%;
 	position: relative;
 	margin: 0 3%;
 	opacity: 0.5;
 	text-decoration: none;
+	top: 0;
+	-webkit-transition: top .2s, opacity 0.2s; /* Safari */
+	transition: top .2s, opacity 0.2s;
+}
+
+#carousel .item:hover {
+	top: 10px;
 }
 
 #carousel .item.cur {
 	opacity: 1;
+	order: 2;
 }
 
 #carousel .item.left {
 	left: -16.66%;
+	order: 1;
 }
 
 #carousel .item.right {
 	right: -16.66%;
+	order: 3;
 }
 
 #carousel .item .image-wrapper {
@@ -82,16 +106,16 @@ p {
 	width:100%;
 	padding-bottom: 140%;
 	position: absolute;
-	top: -40px;
+	top: -60px;
 	z-index: -1;
 }
 
 #carousel .item.left .image-wrapper .image-shadow {
-	left: 40px;
+	left: 60px;
 }
 
 #carousel .item.right .image-wrapper .image-shadow {
-	right: 40px;
+	right: 60px;
 }
 
 #carousel .item .image-wrapper .image {
@@ -104,19 +128,19 @@ p {
 }
 
 #carousel h2.item-title {
-	font-size: 21pt;
+	font-size: 1.6rem;
 	letter-spacing: 3.3px;
 	margin: 25px 0 0;
 }
 
 #carousel h3.item-desc {
-	font-size: 16pt;
+	font-size: 1.4rem;
 	letter-spacing:  2.7px;
 	margin-top: 0;
 }
 
 #project-wrapper, #contact-wrapper {
-	margin: 40px;
+	margin: 0 40px 40px;
 }
 
 #bottom-bar {
@@ -129,21 +153,22 @@ p {
 	width: 33%;
 }
 
-.left-float {
+.left-align {
 	text-align: left;	
 }
 
-.center-float {
+.center-align {
 	text-align: center;
 }
 
-.right-float {
+.right-align {
 	text-align: right;
 }
 
 #bottom-bar h1, #bottom-bar h2 {
-	font-size: 28pt;
+	font-size: 2rem;
 	letter-spacing: 4.5px;
+	margin-top: 20px;
 }
 
 #bottom-bar h1#main-title {
@@ -152,18 +177,33 @@ p {
 
 #bottom-bar a {
 	text-decoration: none;
+	top: 0;
+	transition: top 0.2s;
+	-webkit-transition: top 0.2s;
+	position: relative;
+}
+
+#bottom-bar a:hover {
+	top: 2px;
 }
 
 #carousel-control a {
-	font-size:  34pt;
+	font-size:  2.4rem;
 	text-decoration: none;
 	color: #808080;
 	pointer-events: none;
 	cursor: default;
+	opacity: 0.2;
+	transition: opacity 0.2s;
+}
+
+#carousel-control a img {
+	width: 15px;
 }
 
 #carousel-control a:link {
 	color: #FFFFFF;
+	opacity: 0.5;
 	pointer-events: auto;
 	cursor: pointer;
 }
@@ -172,8 +212,16 @@ p {
 	margin-right: 100px;
 }
 
+#carousel-control #left-control:hover {
+	opacity: 1;
+}
+
 #carousel-control #right-control {
 	margin-left: 100px;
+}
+
+#carousel-control #right-control:hover {
+	opacity: 1;
 }
 
 #contact-content-wrapper {
@@ -185,7 +233,7 @@ p {
 }
 
 #portrait {
-	width: 30%;
+	width: 15%;
 	padding-top: 5%;
 	padding-bottom: 2%;
 	min-width: 300px;
@@ -214,7 +262,7 @@ p {
 
 #contact-text h3 {
 	font-family: "sharp_groteskbook_20";
-	font-size: 21pt;
+	font-size: 1.5rem;
 	letter-spacing: 3.3px;
 	padding: 16px 0;
 }
@@ -242,26 +290,27 @@ p {
 /* Project Title */
 #description h2 {
 	font-family: "sharp_groteskbook_20";
-	font-size: 40pt;
+	font-size: 2.8rem;
+	line-height: 3.2rem;
 	letter-spacing: 6.22px;
 	padding: 16px 0 0;
 }
 
 #description h3 {
-	font-size: 30pt;
+	font-size: 2.1rem;
 	letter-spacing: 6px;
-	padding: 0 0 16px;
+	padding: 4px 0 16px;
 }
 
 #description h5 {
 	font-family: "sharp_groteskbook_20";
-	font-size: 17pt;
+	font-size: 1.5rem;
 	letter-spacing: 2.83px;
 	padding: 16px 0;
 }
 
 #description p {
-	font-size: 14pt;
+	font-size: 1.2rem;
 	letter-spacing: 1.2px;
 	padding-bottom: 14px;
 	line-height: 19px;
@@ -269,10 +318,21 @@ p {
 
 #description ol {
 	padding: 0 0 0 40px;
+	transition: all 0.2s;
+}
+
+#description ol.fixed {
+	position: fixed;
+	top: 0;
+}
+
+#description ol.absolute {
+	position: absolute
 }
 
  #description li {
  	padding: 0 0 0 10px;
+ 	font-size: 1.5rem;
  }
 
  #gallery {
@@ -287,7 +347,7 @@ p {
  #gallery li {
  	display: inline-block;
     border: 1px solid white;
-    font-size: 20pt;
+    font-size: 2rem;
     margin-bottom: 50px;
     counter-increment: gallery-counter;
 

@@ -2,11 +2,16 @@
 <html>
 <head>
 	<!-- This is what appears your web browser's tab area -->
-	<title>UNTITLED</title>
+	<title>Lulian Ahn</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="fonts.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+	html, body {
+		overflow-y: hidden;
+	}
+	</style>
 
 	<!-- Javascript files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,19 +23,87 @@
 
 	<!-- Main slider section -->
 	<div id="carousel">
-			<div class="left item">
+			<a href="providence.html" class="cur item">
 				<div class="image-wrapper">
 					<!-- Styled to add a white border around images -->
 					<div class="image-shadow"></div>
-					<img src="images/home/whatcheer_scaled.jpg" class="image" />
+					<img src="images/home/providence_scaled.jpg" class="image" />
 				</div>
 				<div class="item-label">
-					<h2 class="item-title">What Cheer Pizza</h2>
-					<h3 class="item-desc">2017</h3>
+					<h2 class="item-title">Providence</h2>
+					<h3 class="item-desc">2018</h3>
 				</div>
-			</div>
+			</a>
 
-			<a href="posters.html" class="cur item">
+			<a href="amoragram.html" class="right item">
+				<div class="image-wrapper">
+					<!-- Styled to add a white border around images -->
+					<div class="image-shadow"></div>
+					<img src="images/home/amoragram_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Amoragram</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
+			</a>
+
+			<a href="hackatbrown.html" class="hidden item">
+				<div class="image-wrapper">
+					<!-- Styled to add a white border around images -->
+					<div class="image-shadow"></div>
+					<img src="images/home/hackatbrown_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Hack@Brown</h2>
+					<h3 class="item-desc">2019</h3>
+				</div>
+			</a>
+
+			<a href="visible_abstraction.html" class="hidden item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="images/home/visible_abstraction_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Visible Abstraction</h2>
+					<h3 class="item-desc">2016</h3>
+				</div>
+			</a>
+			
+			<a href="primary_secondary.html" class="hidden item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="images/home/primary_secondary_scaled.jpeg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Primary Secondary</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
+			</a>
+
+			<a href="tarot.html" class="hidden item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="images/home/tarot_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Tarot Calendar</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
+			</a>
+
+			<a href="pop.html" class="hidden item">
+				<div class="image-wrapper">
+					<div class="image-shadow"></div>
+					<img src="images/home/pop_scaled.jpg" class="image" />
+				</div>
+				<div class="item-label">
+					<h2 class="item-title">Pop Food Cookbook</h2>
+					<h3 class="item-desc">2018</h3>
+				</div>
+			</a>
+
+			<a href="posters.html" class="hidden item">
 					<div class="image-wrapper">
 						<div class="image-shadow"></div>
 						<img src="images/home/2_1poster_scaled.jpg" class="image" />
@@ -41,48 +114,52 @@
 					</div>
 			</a>
 
-		
-			<div class="right item">
+			<a href="ds2.html" class="hidden item">
 				<div class="image-wrapper">
 					<div class="image-shadow"></div>
-					<img src="images/home/primary_secondary_scaled.jpeg" class="image" />
+					<img src="images/home/ds2_scaled.jpg" class="image" />
 				</div>
 				<div class="item-label">
-					<h2 class="item-title">Primary Secondary</h2>
+					<h2 class="item-title">DS2 Process</h2>
 					<h3 class="item-desc">2018</h3>
 				</div>
-			</div>
+			</a>
 
-			<div class="hidden item">
+			<a href="whatcheer.html" class="left item">
 				<div class="image-wrapper">
 					<div class="image-shadow"></div>
-					<img src="" class="image" />
+					<img src="images/home/whatcheer_scaled.jpg" class="image" />
 				</div>
 				<div class="item-label">
-					<h2 class="item-title">Primary Secondary</h2>
-					<h3 class="item-desc">2018</h3>
+					<h2 class="item-title">What Cheer</h2>
+					<h3 class="item-desc">2017</h3>
 				</div>
-			</div>
+			</a>
+
 	</div>
 </div>
 
 <!-- Contact Section -->
 <div id="contact-wrapper">
 	<div id="bottom-bar">
-		<div class="left-float">
+		<div class="left-align">
 
 			<!-- Main Title -->
 			<h1 id="main-title"><a href="index.html">Lulian Ahn</a></h1>
 		</div>
-		<div class="center-float">
+		<div class="center-align">
 
 			<!-- Left and Right Control Buttons for Slider -->
 			<div id="carousel-control">
-				<a href="#" id="left-control"><</a>
-				<a href="#" id="right-control">></a>
+				<a href="#" id="left-control">
+					<img src="images/left.svg" />
+				</a>
+				<a href="#" id="right-control">
+					<img src="images/right.svg" />
+				</a>
 			</div>
 		</div>
-		<div class="right-float">
+		<div class="right-align">
 
 			<!-- Contact Link -->
 			<h2 id="main-title"><a href="#" id="contact-link">Contact</a></h2>
