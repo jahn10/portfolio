@@ -1,24 +1,45 @@
 $(document).ready(function() {
-    // const description = $("#description ol")
-    // let initialProjectDescription = 0
-    // if (description.length) {
-    //     initialProjectDescription = description.offset().top
-    // }
-    
+    $("iframe").each(function() {
+        const width = $("#gallery").width();
+        $(this).width(width);
+        $(this).height(width * 1.135);
+    })
+    const description = $("#description ol")
+    let initialProjectDescription = 0
+    if (description.length) {
+        initialProjectDescription = description.offset().top
+    }
+    $("#description li").each(function(index) {
+        if (index > 0) {
+            $(this).addClass("hide");    
+        }
+    })
 
     $(window).scroll(function() {
-    	const yLocation = $(window).scrollTop();
-    	if (yLocation < $("#contact-wrapper").offset().top - 50) {
-    		$("#carousel-control").fadeIn();
-    	} else if (yLocation >= $("#contact-wrapper").offset().top - 50) {
-    		$("#carousel-control").fadeOut();
-    	}
+        const descriptionWidth = description.width()
+        if ($("#gallery ol li").last().height() < $(window).height()) {
+            $("#gallery ol li").last().css("height", $(window).height());
+        }
+        const yLocation = $(window).scrollTop();
 
-        // if (yLocation > initialProjectDescription && yLocation + $("#description ol").height() < $("#contact-wrapper").offset().top - 100) {
-        //     const offset = yLocation - initialProjectDescription
-        //     $("#description ol").css('padding-top', offset)
-        // } else if (yLocation < initialProjectDescription) {
-        //     $("#description ol").css('padding-top', 0)
-        // }
+        if (yLocation > initialProjectDescription + 20 && yLocation + $("#description ol").height() < $("#contact-wrapper").offset().top) {
+            const offset = yLocation - initialProjectDescription
+            description.css('position', "fixed")
+            description.css("width", descriptionWidth);
+            description.css("top", 20);
+        } else if (yLocation < initialProjectDescription + 20) {
+            description.css('position', "relative")
+
+        }
+        $("#gallery ol li").each(function(index) {
+            const offset = $(this).offset().top;
+            if (yLocation >= offset) {
+                $("#description li").each(function() {
+                    $(this).addClass("hide");
+                })
+                $("#description li").eq(index).removeClass("hide");
+            }
+        })
+        
     })
 });

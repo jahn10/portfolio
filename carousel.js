@@ -1,4 +1,12 @@
 $(document).ready(function() {
+	$(window).scroll(function() {
+		const yLocation = $(window).scrollTop();
+    	if (yLocation < $("#contact-wrapper").offset().top - 50) {
+    		$("#carousel-control").fadeIn();
+    	} else if (yLocation >= $("#contact-wrapper").offset().top - 50) {
+    		$("#carousel-control").fadeOut();
+    	}
+	})
 	$("#contact-wrapper").height($(window).height() - 30)
 	// let carouselHeight = 630
 	// if (carouselHeight < $(window).height() - 150) {
@@ -27,7 +35,7 @@ $(document).ready(function() {
 		$([document.documentElement, document.body]).animate({
 		        scrollTop: 0
 		    }, 1000);
-		$("#carousel").removeClass("transparent");
+		$("#carousel").toggleClass("transparent");
 	});
 
 	const carouselItems = $('#carousel .item');

@@ -42,6 +42,12 @@ p a:hover, li a:hover {
 	top: 2px;
 }
 
+.hide {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
 .image {
 	width: 100%;
 }
@@ -331,6 +337,7 @@ p a:hover, li a:hover {
 #description ol {
 	padding: 0 0 0 40px;
 	transition: all 0.2s;
+	position: relative;
 }
 
 #description ol.fixed {
@@ -349,7 +356,7 @@ p a:hover, li a:hover {
 
  #gallery {
  	width: 65%;
- 	padding-top: 32px;
+ 	padding-top: 12px;
  }
 
  #gallery ol {
@@ -363,11 +370,10 @@ p a:hover, li a:hover {
     font-size: 2rem;
     margin-bottom: 20px;
     counter-increment: gallery-counter;
-
+    padding-top: 20px;
  }
 
  #gallery li.top {
- 	padding-top:20px;
  }
 
  #gallery li.bottom {
