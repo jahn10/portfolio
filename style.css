@@ -26,7 +26,7 @@ p {
 	font-size: 1.2rem;
 	padding-bottom: 16px;
 	letter-spacing: 1.4px;
-	line-height: 21px;
+	line-height: 16px;
 }
 
 p a, li a {
@@ -34,6 +34,8 @@ p a, li a {
 	top: 0;
 	transition: top 0.1s;
 	-webkit-transition: top 0.1s;
+	text-decoration: none;
+	font-family: "sharp_groteskmedium_20", sans-serif;
 }
 
 p a:hover, li a:hover {
@@ -47,11 +49,19 @@ p a:hover, li a:hover {
 	display: none;
 }
 
+.transparent {
+	opacity: 0;
+}
+
 #carousel {
 	padding-top: 80px;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 10px;
+	transition-delay: 1s;
+	-webkit-transition-delay: 1s;
+	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
 }
 
 #carousel .item.first {
@@ -239,7 +249,7 @@ p a:hover, li a:hover {
 	padding-top: 5%;
 	padding-bottom: 2%;
 	min-width: 300px;
-	border: 1px solid white;
+	/*border: 1px solid white;*/
 }
 
 #portrait .image-wrapper {
@@ -286,7 +296,7 @@ p a:hover, li a:hover {
 }
 
 #description #project-label {
-	height: 300px;
+	height: 120px;
 }
 
 /* Project Title */
@@ -295,7 +305,7 @@ p a:hover, li a:hover {
 	font-size: 2.8rem;
 	line-height: 3.2rem;
 	letter-spacing: 6.22px;
-	padding: 16px 0 0;
+	padding: 32px 0 0;
 }
 
 #description h3 {
@@ -315,7 +325,7 @@ p a:hover, li a:hover {
 	font-size: 1.2rem;
 	letter-spacing: 1.2px;
 	padding-bottom: 14px;
-	line-height: 19px;
+	line-height: 16px;
 }
 
 #description ol {
@@ -339,6 +349,7 @@ p a:hover, li a:hover {
 
  #gallery {
  	width: 65%;
+ 	padding-top: 32px;
  }
 
  #gallery ol {
@@ -348,9 +359,9 @@ p a:hover, li a:hover {
 
  #gallery li {
  	display: inline-block;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     counter-increment: gallery-counter;
 
  }
@@ -374,10 +385,9 @@ p a:hover, li a:hover {
  }
 
  #gallery ol li.top .image-wrapper {
- 	margin-left: 100px;
- 	margin-top: 50px;
+ 	margin: 20px 0 0 20px
  }
 
  #gallery ol li.bottom .image-wrapper {
- 	margin-right: 100px;
+ 	margin-left: 20px;
  }

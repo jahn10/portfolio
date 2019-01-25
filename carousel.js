@@ -19,6 +19,15 @@ $(document).ready(function() {
 		$([document.documentElement, document.body]).animate({
 		        scrollTop: $("#contact-wrapper").offset().top - 20
 		    }, 1000);
+		$("#carousel").addClass("transparent");
+	});
+
+	$("#main-title").click(function(e) {
+		e.preventDefault();
+		$([document.documentElement, document.body]).animate({
+		        scrollTop: 0
+		    }, 1000);
+		$("#carousel").removeClass("transparent");
 	});
 
 	const carouselItems = $('#carousel .item');

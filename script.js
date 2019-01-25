@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    const description = $("#description ol")
-    let initialProjectDescription = 0
-    if (description.length) {
-        initialProjectDescription = description.offset().top
-    }
+    // const description = $("#description ol")
+    // let initialProjectDescription = 0
+    // if (description.length) {
+    //     initialProjectDescription = description.offset().top
+    // }
     
 
     $(window).scroll(function() {
@@ -14,11 +14,11 @@ $(document).ready(function() {
     		$("#carousel-control").fadeOut();
     	}
 
-        if (yLocation > initialProjectDescription && yLocation + $("#description ol").height() < $("#contact-wrapper").offset().top - 100) {
-            const offset = yLocation - initialProjectDescription
-            $("#description ol").css('padding-top', offset)
-        } else if (yLocation < initialProjectDescription) {
-            $("#description ol").css('padding-top', 0)
-        }
+        // if (yLocation > initialProjectDescription && yLocation + $("#description ol").height() < $("#contact-wrapper").offset().top - 100) {
+        //     const offset = yLocation - initialProjectDescription
+        //     $("#description ol").css('padding-top', offset)
+        // } else if (yLocation < initialProjectDescription) {
+        //     $("#description ol").css('padding-top', 0)
+        // }
     })
 });
