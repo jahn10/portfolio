@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$([document.documentElement, document.body]).animate({
 		        scrollTop: 0
 		    }, 1000);
-		$("#carousel").toggleClass("transparent");
+		$("#carousel").removeClass("transparent");
 	});
 
 	const carouselItems = $('#carousel .item');
