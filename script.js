@@ -1,8 +1,14 @@
 $(document).ready(function() {
     $("iframe").each(function() {
         const width = $("#gallery").width();
-        $(this).width(width);
-        $(this).height(width * 1.135);
+        if ($(this).hasClass("wide")) {
+            $(this).width(width);
+            $(this).height(width * 0.625);
+        } else if ($(this).hasClass("tall")) {
+            $(this).height(0.8 * $(window).height());
+            $(this).width(width);    
+        }
+        
     })
     const description = $("#description ol")
     let initialProjectDescription = 0
