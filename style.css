@@ -211,11 +211,11 @@ p a:hover, li a:hover {
 	transition: opacity 0.2s;
 }
 
-.nav-wrapper {
+#nav-wrapper {
 	text-align: center;
 }
 
-.contact-wrapper {
+#contact-wrapper {
 	text-align: center;
 }
 
