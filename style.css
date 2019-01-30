@@ -51,12 +51,21 @@ p a:hover, li a:hover {
 .image {
 	width: 100%;
 }
+
 .hidden {
 	display: none;
 }
 
 .transparent {
 	opacity: 0;
+}
+
+.centered {
+	width: 100%;
+}
+
+.centered > div {
+	text-align: center;
 }
 
 #carousel {
@@ -168,18 +177,6 @@ p a:hover, li a:hover {
 
 #bottom-bar > div {
 	width: 33%;
-}
-
-.left-align {
-	text-align: left;	
-}
-
-.center-align {
-	text-align: center;
-}
-
-.right-align {
-	text-align: right;
 }
 
 #bottom-bar h1, #bottom-bar h2 {
@@ -361,39 +358,11 @@ p a:hover, li a:hover {
 
  #gallery ol {
  	list-style: none;
- 	/*counter-reset: gallery-counter;*/
  }
 
  #gallery li {
  	display: inline-block;
-    /*border: 1px solid white;*/
     font-size: 2rem;
     margin-bottom: 20px;
-    /*counter-increment: gallery-counter;*/
     padding-top: 20px;
- }
-
- #gallery li.top {
- }
-
- #gallery li.bottom {
- 	padding-bottom: 20px;
- }
-
- #gallery ol li.top::before {
- 	/*content: counter(gallery-counter) ". ";*/
- 	padding: 0 20px;
- }
-
- #gallery ol li.bottom::after {
- 	/*content: counter(gallery-counter) ". ";*/
- 	padding: 0 20px;
- }
-
- #gallery ol li.top .image-wrapper {
- 	/*margin: 20px 0 0 20px*/
- }
-
- #gallery ol li.bottom .image-wrapper {
- 	/*margin-left: 20px;*/
  }
