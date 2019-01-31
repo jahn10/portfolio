@@ -378,3 +378,9 @@ p a:hover, li a:hover {
     margin-bottom: 20px;
     padding-top: 20px;
  }
+.taller {
+	width: 100%;
+}
+ .taller > div{;
+ 	text-align: center;
+ }
