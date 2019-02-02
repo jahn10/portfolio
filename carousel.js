@@ -8,17 +8,11 @@ $(document).ready(function() {
     	}
 	})
 	$("#contact-wrapper").height($(window).height() - 30)
-	// let carouselHeight = 630
-	// if (carouselHeight < $(window).height() - 150) {
-		carouselHeight = $(window).height() - 150
-	// }
+	carouselHeight = $(window).height() - 150
 	$("#carousel").height(carouselHeight)
 	$(window).resize(function() {
 		$("#contact-wrapper").height($(window).height() - 30)
-		// let carouselHeight = 630
-		// if (carouselHeight < $(window).height() - 150) {
-			carouselHeight = $(window).height() - 150
-		// }
+		carouselHeight = $(window).height() - 150
 		$("#carousel").height(carouselHeight)
 	})
 
@@ -51,30 +45,25 @@ $(document).ready(function() {
 				newCur = i;
 			}
 			$(el).removeClass('left right cur');
-			$(el).removeClass('hidden first last').addClass('hidden');
+			$(el).removeClass('none first last').addClass('none');
 		})
 
 		if (newCur != 0) {
 			$(carouselItems[newCur-1]).addClass('left');
-			$(carouselItems[newCur-1]).removeClass('hidden');
+			$(carouselItems[newCur-1]).removeClass('none');
 		} else {
-			// disable left button	
-			// $(carouselItems[newCur]).addClass('first');
-			// left.removeAttr('href')
 			$(carouselItems[carouselItems.length - 1]).addClass('left');
-			$(carouselItems[carouselItems.length - 1]).removeClass('hidden');
-
+			$(carouselItems[carouselItems.length - 1]).removeClass('none');
 		}
 		$(carouselItems[newCur]).addClass('cur');
-		$(carouselItems[newCur]).removeClass('hidden');
+		$(carouselItems[newCur]).removeClass('none');
 		$(carouselItems[newCur+1]).addClass('right');
-		$(carouselItems[newCur+1]).removeClass('hidden');
+		$(carouselItems[newCur+1]).removeClass('none');
 		if (newCur == carouselItems.length - 1) {
 			$(carouselItems[0]).addClass('right');
-			$(carouselItems[0]).removeClass('hidden');
+			$(carouselItems[0]).removeClass('none');
 		}
 		right.attr('href','#')
-		
 	}
 
 	function scrollRight(e) {
@@ -87,27 +76,24 @@ $(document).ready(function() {
 				newCur = i;
 			}
 			$(el).removeClass('left right cur');
-			$(el).removeClass('hidden first last').addClass('hidden');
+			$(el).removeClass('none first last').addClass('none');
 		})
 
 		if (newCur != carouselItems.length - 1) {
 			$(carouselItems[newCur+1]).addClass('right');
-			$(carouselItems[newCur+1]).removeClass('hidden');
+			$(carouselItems[newCur+1]).removeClass('none');
 		} else {
-			// DISABLE right BUTTON
-			// $(carouselItems[newCur]).addClass('last');
-			// right.removeAttr('href')
 			$(carouselItems[0]).addClass('right');
-			$(carouselItems[0]).removeClass('hidden');
+			$(carouselItems[0]).removeClass('none');
 		}
 		$(carouselItems[newCur]).addClass('cur');
-		$(carouselItems[newCur]).removeClass('hidden');
+		$(carouselItems[newCur]).removeClass('none');
 		$(carouselItems[newCur-1]).addClass('left');
-		$(carouselItems[newCur-1]).removeClass('hidden');
+		$(carouselItems[newCur-1]).removeClass('none');
 
 		if (newCur == 0) {
 			$(carouselItems[carouselItems.length - 1]).addClass('left');
-			$(carouselItems[carouselItems.length - 1]).removeClass('hidden');
+			$(carouselItems[carouselItems.length - 1]).removeClass('none');
 		}
 		left.attr('href','#')
 	}

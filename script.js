@@ -18,7 +18,7 @@ $(document).ready(function() {
     }
     $("#description li").each(function(index) {
         if (index > 0) {
-            $(this).addClass("hide");    
+            $(this).addClass("hidden");    
         }
     })
 
@@ -42,9 +42,9 @@ $(document).ready(function() {
             const offset = $(this).offset().top;
             if (yLocation >= offset) {
                 $("#description li").each(function() {
-                    $(this).addClass("hide");
+                    $(this).addClass("hidden");
                 })
-                $("#description li").eq(index).removeClass("hide");
+                $("#description li").eq(index).removeClass("hidden");
             }
         })
         
