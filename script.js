@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // These are for the old template
     const width = $("#gallery").width();
     $(".wide").each(function() {
         $(this).width(width);
@@ -49,4 +50,41 @@ $(document).ready(function() {
         })
         
     })
+
+    // The following is for the new template. The above can be deleted once everything
+    // is moved to the Hack@Brown template.
+
+    // Updates the widths of wide videos and tall videos so they fit on the screen nicely
+    $("iframe.wide").each(function() {
+        const width = $(this).parent().width();
+        $(this).width(width);
+        $(this).height(width * 0.625);
+    })
+    $("iframe.tall").each(function() {
+        let width = $(this).parent().width();
+        if ($(window).width() > 700) {
+            width -= 10;
+        }
+        $(this).width(width);
+        $(this).height(width * 2);
+    })
+
+    // Fades in content on project pages when we are 200 pixels away from the top of them
+    $(window).scroll(function() {
+        const yLocation = $(window).scrollTop();
+        $(".section").each(function() {
+            const offset = $(this).offset().top;
+            if (yLocation >= offset - 200) {
+                $(this).css("opacity", 1);
+            }
+        })
+        
+    })
+
+    if ($(window).width() < 700) {
+        if ($(".item-label").offset()) {
+            $("#nav-wrapper").css("top", $(".item-label").offset().top - 10)
+            $("#nav-wrapper").css("left", $(".cur.item").offset().left)
+        }
+    }
 });
