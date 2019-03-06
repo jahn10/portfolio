@@ -496,10 +496,8 @@ p a:hover, li a:hover {
  	#carousel-control #left-control, #carousel-control #right-control {
  		margin: 0;
  	}
- }
 
-@media screen and (max-width:700px) {
-	.label_extra {
+ 	.label_extra {
 		display: none;
 	}
 
@@ -515,6 +513,21 @@ p a:hover, li a:hover {
 	.section .images .thirds .third {
 		width: 30%;
 	}
-}
 
-}
+	#contact-content-wrapper {
+		display: block;
+	}
+
+	#contact-content-wrapper #portrait {
+		display: none;
+	}
+
+	#contact-text, #contact-text #about, #contact-text #contact {
+		width: 100%;
+		display: block;
+	}
+
+	#contact-text #contact {
+		border: none;
+	}
+ }
